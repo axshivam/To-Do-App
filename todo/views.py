@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from .models import TodoItem
 
@@ -20,9 +20,5 @@ def deleteTodo(request, todo_id):
     item_to_delete.delete()
     return HttpResponseRedirect('/todo/')
 
-
-
-
-
-
-
+def index(request):
+    return redirect('/todo/')
